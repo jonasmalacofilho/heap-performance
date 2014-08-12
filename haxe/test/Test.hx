@@ -31,7 +31,7 @@ class Test {
     }
 
     static function buildDHeap() {
-        return new elebeta.ds.DAryHeap<Item>({checkProperty : checkProperty});
+        return new elebeta.ds.DHeap<Item>({checkProperty : checkProperty});
     }
 
     static function buildJHeap() {
@@ -64,7 +64,7 @@ class Item {
 }
 
 typedef Heaps = {
-    var dheap : elebeta.ds.DAryHeap<Item>;
+    var dheap : elebeta.ds.DHeap<Item>;
     var jheap : jonas.ds.DAryHeap<Item>;
 }
 
