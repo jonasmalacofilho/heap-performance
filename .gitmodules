@@ -1,0 +1,6 @@
+[submodule "haxe/dheap"]
+	path = haxe/dheap
+	url = git@github.com:jonasmalacofilho/dheap.git
+[submodule "haxe/jonas-haxe"]
+	path = haxe/jonas-haxe
+	url = git@github.com:jonasmalacofilho/jonas-haxe.git

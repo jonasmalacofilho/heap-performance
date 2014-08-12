@@ -1,0 +1,7 @@
+-java out/java
+-main Test
+
+-cp test
+-cp dheap/src
+-cp jonas-haxe/src
+
