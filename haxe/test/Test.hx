@@ -31,7 +31,12 @@ class Test {
     }
 
     static function buildDHeap() {
-        return new elebeta.ds.DHeap<Item>({checkProperty : checkProperty});
+        return elebeta.ds.DHeapMacro.createClass( (_ : Test.Item), (_ : {
+            override function checkProperty(parent:Test.Item, child:Test.Item):Bool
+            {
+                return parent.val <= child.val;
+            }
+        }));
     }
 
     static function buildJHeap() {
@@ -41,8 +46,12 @@ class Test {
     }
 
     static function main() {
+        //println("Waiting");
+        //Sys.stdin().readByte();
         var heaps = {dheap : buildDHeap(), jheap : buildJHeap()};
         println('insertion: ${insert(heaps, MILLION)}');
+        //println("Waiting");
+        //Sys.stdin().readByte();
     }
 
     inline
@@ -64,8 +73,8 @@ class Item {
 }
 
 typedef Heaps = {
-    var dheap : elebeta.ds.DHeap<Item>;
-    var jheap : jonas.ds.DAryHeap<Item>;
+    var dheap : Dynamic;
+    var jheap : Dynamic;
 }
 
 typedef Times = {
