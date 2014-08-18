@@ -31,18 +31,22 @@ class Test {
     }
 
     static function buildDHeap() {
-        return new elebeta.ds.DHeap<Item>({checkProperty : checkProperty});
+        return new elebeta.ds.DHeap<Item>({checkProperty : checkProperty.bind(_, _)});
     }
 
     static function buildJHeap() {
         var heap = new jonas.ds.DAryHeap<Item>(2);
-        heap.predicate = checkProperty;
+        heap.predicate = checkProperty.bind(_, _);
         return heap;
     }
 
     static function main() {
+        trace("waiting");
+        Sys.stdin().readByte();
         var heaps = {dheap : buildDHeap(), jheap : buildJHeap()};
         println('insertion: ${insert(heaps, MILLION)}');
+        trace("waiting");
+        Sys.stdin().readByte();
     }
 
     inline
