@@ -1,7 +1,0 @@
--neko out/test.n
--main Test
-
--cp test
--cp dheap/src
--cp jonas-haxe/src
-

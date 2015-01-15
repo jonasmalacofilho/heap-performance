@@ -1,0 +1,21 @@
+# started on Thu Jan 15 07:26:33 2015
+
+
+ Performance counter stats for 'java -jar exec/testj.jar dheap 1000000 30' (30 runs):
+
+       2192.432993      task-clock (msec)         #    1.253 CPUs utilized            ( +-  0.79% )
+               587      context-switches          #    0.268 K/sec                    ( +-  1.37% )
+                73      cpu-migrations            #    0.033 K/sec                    ( +-  2.18% )
+             5,997      page-faults               #    0.003 M/sec                    ( +-  0.18% )
+     7,263,404,514      cpu-cycles                #    3.313 GHz                      ( +-  0.82% ) [62.12%]
+     5,810,775,857      instructions              #    0.80  insns per cycle        
+                                                  #    0.70  stalled cycles per insn  ( +-  0.16% ) [74.62%]
+     4,042,947,682      stalled-cycles-frontend   #   55.66% frontend cycles idle     ( +-  1.33% ) [74.70%]
+     3,077,192,352      stalled-cycles-backend    #   42.37% backend  cycles idle     ( +-  1.57% ) [75.11%]
+        35,324,030      cache-references          #   16.112 M/sec                    ( +-  1.30% ) [75.65%]
+        13,204,196      cache-misses              #   37.380 % of all cache refs      ( +-  2.41% ) [76.07%]
+       969,245,365      branches                  #  442.087 M/sec                    ( +-  0.23% ) [50.16%]
+        39,654,549      branch-misses             #    4.09% of all branches          ( +-  0.48% ) [49.65%]
+
+       1.750306201 seconds time elapsed                                          ( +-  0.60% )
+

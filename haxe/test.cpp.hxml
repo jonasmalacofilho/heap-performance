@@ -1,7 +1,0 @@
--cpp out/cpp
--main Test
-
--cp test
--cp dheap/src
--cp jonas-haxe/src
-
