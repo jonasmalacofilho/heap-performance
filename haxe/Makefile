@@ -1,16 +1,19 @@
-HXFLAGS_COMMON=-main Test -cp test -cp dheap/lib -cp jonas-haxe/src
-PERF_EVENTS=task-clock,context-switches,cpu-migrations,page-faults,cpu-cycles,instructions,stalled-cycles-frontend,stalled-cycles-backend,cache-references,cache-misses,branches,branch-misses
+TARGET?=-java exec/java
+HXFLAGS?=-main Test -cp test -cp dheap/lib -cp jonas-haxe/src
 
-all: exec .PHONY
-exec: exec/testj.jar .PHONY
+PERF_EVENTS?=task-clock,context-switches,cpu-migrations,page-faults,cpu-cycles,instructions,stalled-cycles-frontend,stalled-cycles-backend,cache-references,cache-misses,branches,branch-misses
+EXEC?=java -jar exec/java/Test.jar
+NOELEM?=100000
+NOIT?=30
+NOREPEAT?=30
+
+build: test/Test.hx .PHONY
+	haxe $(TARGET) $(HXFLAGS)
+
 stat: dheap.perf.stat jheap.perf.stat .PHONY
 
-exec/testj.jar: test/Test.hx
-	haxe -java exec/java $(HXFLAGS_COMMON)
-	cp exec/java/Test.jar exec/testj.jar
-
-dheap.perf.stat jheap.perf.stat: %.perf.stat: exec/testj.jar
-	perf stat -e $(PERF_EVENTS) -r30 -o $@ java -jar exec/testj.jar $* 100000 30
+dheap.perf.stat jheap.perf.stat: %.perf.stat: build
+	perf stat -e $(PERF_EVENTS) -r $(NOREPEAT) -o $@ $(EXEC) $* $(NOELEM) $(NOIT)
 
 clean: .PHONY
 	rm -rf exec *.perf.stat

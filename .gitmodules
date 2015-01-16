@@ -4,3 +4,6 @@
 [submodule "haxe/jonas-haxe"]
 	path = haxe/jonas-haxe
 	url = git@github.com:jonasmalacofilho/jonas-haxe.git
+[submodule "haxe/polygonalds"]
+	path = haxe/polygonalds
+	url = git@github.com:polygonal/ds.git
