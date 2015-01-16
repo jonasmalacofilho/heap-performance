@@ -5,7 +5,7 @@ import haxe.ds.Vector;
 import Std.parseInt;
 
 @:publicFields
-class Item {
+class Item implements de.polygonal.ds.Heapable<Item> {
     var id : Int;
     var val : Int;
     var pos : Int;
@@ -15,6 +15,18 @@ class Item {
         this.id = id;
         this.val = val;
     }
+
+    // polygonal-ds
+    var position : Int;
+    inline function compare(other:Item):Int {
+        return
+            if (val > other.val)
+                1;
+            else if (val < other.val)
+                -1;
+            else
+                0;
+    }
 }
 
 typedef Data = Vector<Item>;
@@ -22,7 +34,7 @@ typedef Data = Vector<Item>;
 class Test {
     static inline var UPDATE_INTERVAL = 2;
 
-    static function checkProperty(parent : Item, child : Item)
+    inline static function checkProperty(parent : Item, child : Item)
     {
         return parent.val <= child.val;
     }
@@ -48,6 +60,16 @@ class Test {
             heap.put(data[i]);
         for (i in 0...n)
             heap.get();
+    }
+
+    static function execPolygonalDSheap(data:Data)
+    {
+        var heap = new de.polygonal.ds.Heap<Item>();
+        var n = data.length;
+        for (i in 0...n)
+            heap.add(data[i]);
+        for (i in 0...n)
+            heap.pop();
     }
 
     static function execDummy(data) {}
@@ -90,6 +112,7 @@ class Test {
         var exec = switch (heap) {
         case "dheap": execDheap.bind(_);
         case "jheap": execJheap.bind(_);
+        case "polygonal", "polygonalds": execPolygonalDSheap.bind(_);
         case "empty", "none", "dummy": execDummy.bind(_);
         case _: throw 'No heap type: $heap';
         }

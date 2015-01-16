@@ -1,0 +1,21 @@
+# started on Fri Jan 16 07:19:02 2015
+
+
+ Performance counter stats for 'java -jar exec/java/Test.jar polygonal 100000 30' (30 runs):
+
+       4613.479768      task-clock (msec)         #    1.105 CPUs utilized            ( +-  3.05% )
+             1,252      context-switches          #    0.271 K/sec                    ( +-  3.72% )
+               147      cpu-migrations            #    0.032 K/sec                    ( +-  3.98% )
+           214,246      page-faults               #    0.046 M/sec                    ( +-  0.40% )
+    15,058,261,702      cpu-cycles                #    3.264 GHz                      ( +-  3.10% ) [62.72%]
+    22,110,294,164      instructions              #    1.47  insns per cycle        
+                                                  #    0.30  stalled cycles per insn  ( +-  2.08% ) [75.03%]
+     6,662,045,739      stalled-cycles-frontend   #   44.24% frontend cycles idle     ( +-  4.31% ) [74.89%]
+     4,759,310,742      stalled-cycles-backend    #   31.61% backend  cycles idle     ( +-  4.08% ) [74.99%]
+       135,141,043      cache-references          #   29.293 M/sec                    ( +-  1.43% ) [75.19%]
+        34,038,762      cache-misses              #   25.188 % of all cache refs      ( +-  1.78% ) [75.49%]
+     3,919,089,743      branches                  #  849.487 M/sec                    ( +-  2.33% ) [50.30%]
+        42,867,507      branch-misses             #    1.09% of all branches          ( +-  0.94% ) [50.29%]
+
+       4.176206403 seconds time elapsed                                          ( +-  2.28% )
+

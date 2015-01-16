@@ -4,4 +4,7 @@
 -cp test
 -cp dheap/lib
 -cp jonas-haxe/src
+-cp polygonalds/src
+
+-lib polygonal-printf
 
