@@ -2,6 +2,6 @@
 -main Test
 
 -cp test
--cp dheap/src
+-cp dheap/lib
 -cp jonas-haxe/src
 

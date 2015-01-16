@@ -1,4 +1,4 @@
-HXFLAGS_COMMON=-main Test -cp test -cp dheap/src -cp jonas-haxe/src
+HXFLAGS_COMMON=-main Test -cp test -cp dheap/lib -cp jonas-haxe/src
 PERF_EVENTS=task-clock,context-switches,cpu-migrations,page-faults,cpu-cycles,instructions,stalled-cycles-frontend,stalled-cycles-backend,cache-references,cache-misses,branches,branch-misses
 
 all: exec .PHONY
