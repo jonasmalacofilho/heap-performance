@@ -3,9 +3,9 @@ HXFLAGS?=-main Test -cp test -cp dheap/lib -cp jonas-haxe/src
 
 PERF_EVENTS?=task-clock,context-switches,cpu-migrations,page-faults,cpu-cycles,instructions,stalled-cycles-frontend,stalled-cycles-backend,cache-references,cache-misses,branches,branch-misses
 EXEC?=java -jar exec/java/Test.jar
-NOELEM?=100000
-NOIT?=30
-NOREPEAT?=30
+NELEM?=100000
+NIT?=30
+NREPEAT?=30
 
 build: test/Test.hx .PHONY
 	haxe $(TARGET) $(HXFLAGS)
@@ -13,7 +13,7 @@ build: test/Test.hx .PHONY
 stat: dheap.perf.stat jheap.perf.stat .PHONY
 
 dheap.perf.stat jheap.perf.stat: %.perf.stat: build
-	perf stat -e $(PERF_EVENTS) -r $(NOREPEAT) -o $@ $(EXEC) $* $(NOELEM) $(NOIT)
+	perf stat -e $(PERF_EVENTS) -r $(NREPEAT) -o $@ $(EXEC) $* $(NELEM) $(NIT)
 
 clean: .PHONY
 	rm -rf exec *.perf.stat
