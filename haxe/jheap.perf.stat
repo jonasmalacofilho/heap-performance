@@ -1,21 +1,21 @@
-# started on Thu Jan 15 07:27:25 2015
+# started on Fri Jan 16 05:05:08 2015
 
 
- Performance counter stats for 'java -jar exec/testj.jar jheap 1000000 30' (30 runs):
+ Performance counter stats for 'java -jar exec/testj.jar jheap 100000 30' (30 runs):
 
-       2621.165156      task-clock (msec)         #    1.214 CPUs utilized            ( +-  0.38% )
-               627      context-switches          #    0.239 K/sec                    ( +-  0.73% )
-                76      cpu-migrations            #    0.029 K/sec                    ( +-  2.25% )
-             7,034      page-faults               #    0.003 M/sec                    ( +-  0.40% )
-     8,722,045,051      cpu-cycles                #    3.328 GHz                      ( +-  0.38% ) [62.07%]
-    10,919,619,130      instructions              #    1.25  insns per cycle        
-                                                  #    0.33  stalled cycles per insn  ( +-  0.11% ) [74.78%]
-     3,589,983,771      stalled-cycles-frontend   #   41.16% frontend cycles idle     ( +-  0.89% ) [74.80%]
-     3,286,116,971      stalled-cycles-backend    #   37.68% backend  cycles idle     ( +-  0.86% ) [75.30%]
-        36,309,462      cache-references          #   13.852 M/sec                    ( +-  0.80% ) [75.67%]
-        13,570,328      cache-misses              #   37.374 % of all cache refs      ( +-  1.31% ) [75.97%]
-     2,300,841,821      branches                  #  877.794 M/sec                    ( +-  0.18% ) [49.93%]
-        54,100,990      branch-misses             #    2.35% of all branches          ( +-  0.52% ) [49.51%]
+       3148.867670      task-clock (msec)         #    1.038 CPUs utilized            ( +-  0.70% )
+               561      context-switches          #    0.178 K/sec                    ( +-  1.35% )
+                51      cpu-migrations            #    0.016 K/sec                    ( +-  3.16% )
+             7,766      page-faults               #    0.002 M/sec                    ( +-  1.20% )
+    10,865,255,747      cpu-cycles                #    3.451 GHz                      ( +-  0.50% ) [62.70%]
+    23,362,460,299      instructions              #    2.15  insns per cycle        
+                                                  #    0.10  stalled cycles per insn  ( +-  0.07% ) [75.22%]
+     2,250,026,587      stalled-cycles-frontend   #   20.71% frontend cycles idle     ( +-  2.49% ) [75.25%]
+     1,113,175,732      stalled-cycles-backend    #   10.25% backend  cycles idle     ( +-  4.20% ) [75.23%]
+        56,114,038      cache-references          #   17.820 M/sec                    ( +-  0.36% ) [75.06%]
+         2,263,387      cache-misses              #    4.034 % of all cache refs      ( +- 12.17% ) [74.97%]
+     4,316,965,371      branches                  # 1370.958 M/sec                    ( +-  0.11% ) [49.78%]
+        38,250,563      branch-misses             #    0.89% of all branches          ( +-  0.46% ) [50.13%]
 
-       2.159578144 seconds time elapsed                                          ( +-  0.24% )
+       3.034650241 seconds time elapsed                                          ( +-  0.73% )
 

@@ -10,7 +10,7 @@ exec/testj.jar: test/Test.hx
 	cp exec/java/Test.jar exec/testj.jar
 
 dheap.perf.stat jheap.perf.stat: %.perf.stat: exec/testj.jar
-	perf stat -e $(PERF_EVENTS) -r30 -o $@ java -jar exec/testj.jar $* 1000000 30
+	perf stat -e $(PERF_EVENTS) -r30 -o $@ java -jar exec/testj.jar $* 100000 30
 
 clean: .PHONY
 	rm -rf exec *.perf.stat

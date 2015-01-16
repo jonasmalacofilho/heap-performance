@@ -35,6 +35,8 @@ class Test {
         var n = data.length;
         for (i in 0...n)
             heap.insert(data[i]);
+        for (i in 0...n)
+            heap.extractRoot();
     }
 
     static function execJheap(data:Data)
@@ -44,6 +46,8 @@ class Test {
         var n = data.length;
         for (i in 0...n)
             heap.put(data[i]);
+        for (i in 0...n)
+            heap.get();
     }
 
     static function execDummy(data) {}
@@ -59,7 +63,7 @@ class Test {
     static function main()
     {
 #if interp
-        var args = "dheap,10000,10".split(",");
+        var args = "dheap,1000,10".split(",");
 #else
         var args = Sys.args();
 #end
@@ -76,7 +80,7 @@ class Test {
         }
 
         var heap = getArg(0, "dheap").toLowerCase();
-        var noElements = parseInt(getArg(1, "1000000"));
+        var noElements = parseInt(getArg(1, "100000"));
         var noIterations = parseInt(getArg(2, "-1"));
         println('==============================');
         println('Heap type: $heap');
